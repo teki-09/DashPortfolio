@@ -1,0 +1,2197 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aniket A. Srivastava — Personal Builds, Labs &amp; Marketing Work (2015–2026)</title>
+  <meta name="description" content="Personal project index, school labs, hobby builds, and digital marketing work archive of Aniket A. Srivastava (2015–2026)." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #fafafa;
+      --surface: #ffffff;
+      --surface-subtle: #f4f4f5;
+      --surface-hover: #f1f1f3;
+      --ink: #111113;
+      --ink-secondary: #52525b;
+      --ink-muted: #71717a;
+      --border: #e4e4e7;
+      --border-strong: #18181b;
+      --accent: #111113;
+      --accent-inv: #fafafa;
+
+      /* Origin Tags */
+      --work-fg: #15803d;
+      --work-bg: #f0fdf4;
+      --work-bd: #bbf7d0;
+
+      --edu-fg: #1d4ed8;
+      --edu-bg: #eff6ff;
+      --edu-bd: #bfdbfe;
+
+      --hobby-fg: #52525b;
+      --hobby-bg: #f4f4f5;
+      --hobby-bd: #d4d4d8;
+
+      --pending-fg: #a16207;
+      --pending-bg: #fefce8;
+      --pending-bd: #fef08a;
+
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+      --rail-width: 340px;
+    }
+
+    [data-theme="dark"] {
+      --bg: #09090b;
+      --surface: #0e0e11;
+      --surface-subtle: #141418;
+      --surface-hover: #18181d;
+      --ink: #fafafa;
+      --ink-secondary: #a1a1aa;
+      --ink-muted: #71717a;
+      --border: #27272a;
+      --border-strong: #e4e4e7;
+      --accent: #fafafa;
+      --accent-inv: #09090b;
+
+      --work-fg: #4ade80;
+      --work-bg: rgba(22, 101, 52, 0.22);
+      --work-bd: rgba(74, 222, 128, 0.28);
+
+      --edu-fg: #60a5fa;
+      --edu-bg: rgba(30, 64, 175, 0.24);
+      --edu-bd: rgba(96, 165, 250, 0.3);
+
+      --hobby-fg: #d4d4d8;
+      --hobby-bg: #18181b;
+      --hobby-bd: #27272a;
+
+      --pending-fg: #facc15;
+      --pending-bg: rgba(133, 77, 14, 0.22);
+      --pending-bd: rgba(250, 204, 21, 0.28);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--font-sans);
+      font-size: 15px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--ink);
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+      color: inherit;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* Architectural Split Layout */
+    .shell {
+      max-width: 1460px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: var(--rail-width) minmax(0, 1fr);
+      min-height: 100vh;
+      border-left: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+    }
+
+    /* Left Identity & Filter Rail */
+    .rail {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+      padding: 1.85rem 1.65rem;
+      border-right: 1px solid var(--border);
+      background: var(--surface);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .rail::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    .rail::-webkit-scrollbar-thumb {
+      background: var(--border);
+    }
+
+    .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.7rem;
+    }
+
+    .theme-btn {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      padding: 0.22rem 0.5rem;
+      border: 1px solid var(--border);
+      background: var(--surface-subtle);
+      color: var(--ink);
+      transition: border-color 0.15s ease;
+    }
+
+    .theme-btn:hover {
+      border-color: var(--border-strong);
+    }
+
+    .name {
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1.15;
+      margin-bottom: 0.4rem;
+    }
+
+    .role-line {
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      color: var(--ink-secondary);
+      line-height: 1.45;
+      margin-bottom: 0.95rem;
+    }
+
+    .bio {
+      font-size: 0.855rem;
+      color: var(--ink-secondary);
+      line-height: 1.6;
+      padding-bottom: 1.15rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .bio strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .metrics-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-bottom: 1px solid var(--border);
+      padding: 0.85rem 0;
+      gap: 0.5rem;
+    }
+
+    .metric-val {
+      font-family: var(--font-mono);
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      display: block;
+    }
+
+    .metric-lbl {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--ink-muted);
+    }
+
+    .rail-section {
+      padding-top: 0.2rem;
+    }
+
+    .rail-label {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--ink-muted);
+      margin-bottom: 0.55rem;
+      display: block;
+    }
+
+    .filter-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.18rem;
+    }
+
+    .filter-btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 0.4rem 0.58rem;
+      font-size: 0.82rem;
+      color: var(--ink-secondary);
+      border: 1px solid transparent;
+      text-align: left;
+      transition: all 0.15s ease;
+    }
+
+    .filter-btn:hover {
+      background: var(--surface-subtle);
+      color: var(--ink);
+    }
+
+    .filter-btn.active {
+      background: var(--accent);
+      color: var(--accent-inv);
+      font-weight: 500;
+    }
+
+    .filter-count {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      opacity: 0.75;
+    }
+
+    .hub-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      padding-top: 0.9rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .hub-link {
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      color: var(--ink-secondary);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.25rem 0;
+      border-bottom: 1px dashed transparent;
+    }
+
+    .hub-link:hover {
+      color: var(--ink);
+      border-bottom-color: var(--border-strong);
+    }
+
+    /* Main Content Stream */
+    .main {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      padding: 0.95rem 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.85rem;
+    }
+
+    .search-wrap {
+      position: relative;
+      flex: 1 1 260px;
+      max-width: 440px;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 0.5rem 2.2rem 0.5rem 0.75rem;
+      font-family: var(--font-mono);
+      font-size: 0.79rem;
+      background: var(--surface);
+      color: var(--ink);
+      border: 1px solid var(--border);
+      outline: none;
+      transition: border-color 0.15s ease;
+    }
+
+    .search-input:focus {
+      border-color: var(--border-strong);
+    }
+
+    .search-kbd {
+      position: absolute;
+      right: 0.6rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--ink-muted);
+      border: 1px solid var(--border);
+      padding: 0.05rem 0.35rem;
+      pointer-events: none;
+    }
+
+    .controls-group {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      flex-wrap: wrap;
+    }
+
+    .ctrl-btn {
+      font-family: var(--font-mono);
+      font-size: 0.73rem;
+      padding: 0.43rem 0.68rem;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--ink-secondary);
+      transition: all 0.15s ease;
+    }
+
+    .ctrl-btn:hover {
+      border-color: var(--border-strong);
+      color: var(--ink);
+    }
+
+    .ctrl-btn.active {
+      background: var(--accent);
+      color: var(--accent-inv);
+      border-color: var(--accent);
+    }
+
+    .archive-header {
+      padding: 1.5rem 2rem 1.15rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.85rem;
+    }
+
+    .archive-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+    }
+
+    .archive-meta {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--ink-muted);
+    }
+
+    /* Editorial Index Table Header */
+    .table-head {
+      display: grid;
+      grid-template-columns: 46px 82px 116px minmax(0, 1fr) 168px 78px;
+      gap: 1rem;
+      padding: 0.62rem 2rem;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface-subtle);
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--ink-muted);
+    }
+
+    /* Project Rows */
+    .project-list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-item {
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+      transition: background-color 0.15s ease;
+    }
+
+    .project-row {
+      display: grid;
+      grid-template-columns: 46px 82px 116px minmax(0, 1fr) 168px 78px;
+      gap: 1rem;
+      align-items: start;
+      padding: 1.15rem 2rem;
+      cursor: pointer;
+      transition: background-color 0.15s ease;
+    }
+
+    .project-row:hover {
+      background: var(--surface-hover);
+    }
+
+    .col-idx {
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      color: var(--ink-muted);
+      padding-top: 0.15rem;
+    }
+
+    .col-year {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--ink-secondary);
+      padding-top: 0.12rem;
+    }
+
+    /* Thumbnail Preview Box */
+    .thumb-box {
+      width: 116px;
+      height: 68px;
+      border: 1px solid var(--border);
+      background: var(--surface-subtle);
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .thumb-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.25s ease;
+    }
+
+    .project-row:hover .thumb-box img {
+      transform: scale(1.04);
+    }
+
+    .thumb-tag {
+      position: absolute;
+      bottom: 3px;
+      right: 3px;
+      font-family: var(--font-mono);
+      font-size: 0.56rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 0.06rem 0.3rem;
+      background: rgba(9, 9, 11, 0.82);
+      color: #fafafa;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .thumb-fallback {
+      width: 100%;
+      height: 100%;
+      padding: 0.35rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      line-height: 1.25;
+      color: var(--ink-muted);
+      background: repeating-linear-gradient(
+        -45deg,
+        var(--surface-subtle),
+        var(--surface-subtle) 6px,
+        var(--surface) 6px,
+        var(--surface) 12px
+      );
+    }
+
+    .col-main {
+      min-width: 0;
+    }
+
+    .proj-title-line {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .proj-title {
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+    }
+
+    .proj-domain-tag {
+      font-family: var(--font-mono);
+      font-size: 0.67rem;
+      color: var(--ink-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .proj-summary {
+      font-size: 0.865rem;
+      color: var(--ink-secondary);
+      line-height: 1.55;
+      margin-bottom: 0.6rem;
+      max-width: 72ch;
+    }
+
+    .tech-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.32rem;
+    }
+
+    .tech-chip {
+      font-family: var(--font-mono);
+      font-size: 0.69rem;
+      padding: 0.14rem 0.45rem;
+      background: var(--surface-subtle);
+      border: 1px solid var(--border);
+      color: var(--ink-secondary);
+    }
+
+    .col-status {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.32rem;
+      padding-top: 0.1rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-family: var(--font-mono);
+      font-size: 0.66rem;
+      padding: 0.18rem 0.46rem;
+      border: 1px solid var(--border);
+      white-space: nowrap;
+    }
+
+    .badge-work {
+      color: var(--work-fg);
+      background: var(--work-bg);
+      border-color: var(--work-bd);
+    }
+
+    .badge-edu {
+      color: var(--edu-fg);
+      background: var(--edu-bg);
+      border-color: var(--edu-bd);
+    }
+
+    .badge-hobby {
+      color: var(--hobby-fg);
+      background: var(--hobby-bg);
+      border-color: var(--hobby-bd);
+    }
+
+    .badge-pending {
+      color: var(--pending-fg);
+      background: var(--pending-bg);
+      border-color: var(--pending-bd);
+    }
+
+    .col-action {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 0.35rem;
+      padding-top: 0.1rem;
+    }
+
+    .row-btn {
+      font-family: var(--font-mono);
+      font-size: 0.71rem;
+      padding: 0.24rem 0.48rem;
+      border: 1px solid var(--border);
+      color: var(--ink-secondary);
+      background: var(--surface);
+    }
+
+    .row-btn:hover {
+      border-color: var(--border-strong);
+      color: var(--ink);
+    }
+
+    /* Inline Expanded Deep-Dive Drawer */
+    .project-detail {
+      display: none;
+      padding: 0 2rem 1.75rem calc(2rem + 46px + 82px + 1rem);
+      border-top: 1px dashed var(--border);
+      background: var(--surface-subtle);
+    }
+
+    .project-item.expanded .project-detail {
+      display: block;
+    }
+
+    .detail-layout {
+      display: grid;
+      grid-template-columns: 260px minmax(0, 1fr);
+      gap: 1.5rem;
+      padding-top: 1.25rem;
+      align-items: start;
+    }
+
+    .detail-layout.no-preview {
+      grid-template-columns: 1fr;
+    }
+
+    .detail-media-card {
+      border: 1px solid var(--border);
+      background: var(--surface);
+      overflow: hidden;
+    }
+
+    .detail-media-card img {
+      width: 100%;
+      max-height: 220px;
+      object-fit: cover;
+      display: block;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .detail-media-caption {
+      padding: 0.45rem 0.65rem;
+      font-family: var(--font-mono);
+      font-size: 0.67rem;
+      color: var(--ink-muted);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.35rem;
+    }
+
+    .detail-block h4 {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--ink-muted);
+      margin-bottom: 0.42rem;
+    }
+
+    .detail-block p,
+    .detail-block ul {
+      font-size: 0.86rem;
+      color: var(--ink-secondary);
+      line-height: 1.62;
+    }
+
+    .detail-block ul {
+      padding-left: 1.1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.28rem;
+    }
+
+    .detail-links {
+      margin-top: 1.15rem;
+      padding-top: 0.95rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .detail-links-title {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--ink-muted);
+      margin-bottom: 0.55rem;
+      display: block;
+    }
+
+    .link-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .ext-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.42rem;
+      font-family: var(--font-mono);
+      font-size: 0.73rem;
+      padding: 0.38rem 0.65rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--ink);
+      transition: all 0.15s ease;
+    }
+
+    .ext-link:hover {
+      background: var(--accent);
+      color: var(--accent-inv);
+      border-color: var(--accent);
+    }
+
+    .ext-type {
+      font-size: 0.63rem;
+      text-transform: uppercase;
+      opacity: 0.72;
+      padding-right: 0.32rem;
+      border-right: 1px solid currentColor;
+    }
+
+    .no-links-note {
+      font-family: var(--font-mono);
+      font-size: 0.73rem;
+      color: var(--ink-muted);
+    }
+
+    /* Visual Gallery View */
+    .gallery-view {
+      padding: 1.75rem 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .gallery-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      transition: border-color 0.15s ease;
+    }
+
+    .gallery-card:hover {
+      border-color: var(--border-strong);
+    }
+
+    .gallery-media {
+      width: 100%;
+      height: 175px;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface-subtle);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gallery-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .gallery-body {
+      padding: 1.05rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      flex: 1;
+    }
+
+    /* Timeline Era View */
+    .timeline-view {
+      padding: 1.75rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .era-group {
+      border-left: 2px solid var(--border-strong);
+      padding-left: 1.5rem;
+    }
+
+    .era-heading {
+      font-family: var(--font-mono);
+      font-size: 0.88rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .era-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+    }
+
+    .era-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 1.05rem;
+      cursor: pointer;
+      transition: border-color 0.15s ease;
+    }
+
+    .era-card:hover {
+      border-color: var(--border-strong);
+    }
+
+    /* Focus Modal */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(9, 9, 11, 0.72);
+      backdrop-filter: blur(2px);
+      z-index: 50;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+
+    .modal-backdrop.open {
+      display: flex;
+    }
+
+    .modal-card {
+      background: var(--surface);
+      border: 1px solid var(--border-strong);
+      width: 100%;
+      max-width: 860px;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 1.85rem;
+    }
+
+    .modal-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-bottom: 0.95rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 1.2rem;
+    }
+
+    .modal-nav {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .modal-hero-media {
+      margin-bottom: 1.25rem;
+      border: 1px solid var(--border);
+      background: var(--surface-subtle);
+      overflow: hidden;
+    }
+
+    .modal-hero-media img {
+      width: 100%;
+      max-height: 340px;
+      object-fit: contain;
+      background: #09090b;
+      display: block;
+    }
+
+    .empty-state {
+      padding: 4rem 2rem;
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: 0.84rem;
+      color: var(--ink-muted);
+    }
+
+    .footer {
+      margin-top: auto;
+      padding: 1.4rem 2rem;
+      border-top: 1px solid var(--border);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--ink-muted);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 1120px) {
+      .shell {
+        grid-template-columns: 1fr;
+      }
+
+      .rail {
+        position: static;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .filter-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      .filter-btn {
+        width: auto;
+      }
+
+      .project-detail {
+        padding-left: 2rem;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .table-head {
+        display: none;
+      }
+
+      .project-row {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+        padding: 1.15rem 1.25rem;
+      }
+
+      .thumb-box {
+        width: 100%;
+        height: 150px;
+      }
+
+      .project-detail {
+        padding: 0 1.25rem 1.5rem;
+      }
+
+      .detail-layout,
+      .detail-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .topbar,
+      .archive-header,
+      .gallery-view,
+      .timeline-view,
+      .footer {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <!-- Left Identity & Filter Rail -->
+    <aside class="rail">
+      <div>
+        <div class="eyebrow">
+          <span>INDEX // 2015–2026</span>
+          <button class="theme-btn" id="themeToggle" type="button" aria-label="Toggle color theme">DARK MODE</button>
+        </div>
+
+        <h1 class="name">Aniket A. Srivastava</h1>
+        <p class="role-line">Digital Marketer (Work) · Hobby Builder &amp; CS/Security Student Projects</p>
+
+        <p class="bio">
+          This site collects everything I’ve built or worked on since 2015 in one place. <strong>Only the 2015–2024+ marketing &amp; SEO entries are actual work experience</strong>—everything else is a personal hobby project, test script, or school capstone built out of curiosity without external users or requirements.
+        </p>
+
+        <div class="metrics-strip">
+          <div>
+            <span class="metric-val">15</span>
+            <span class="metric-lbl">Hobby Builds</span>
+          </div>
+          <div>
+            <span class="metric-val">5</span>
+            <span class="metric-lbl">School Labs</span>
+          </div>
+          <div>
+            <span class="metric-val">4</span>
+            <span class="metric-lbl">Marketing Work</span>
+          </div>
+        </div>
+
+        <div class="rail-section" style="margin-top: 1.05rem;">
+          <span class="rail-label">01 / Origin (Work vs. Personal)</span>
+          <div class="filter-list" id="originFilters"></div>
+        </div>
+
+        <div class="rail-section" style="margin-top: 1.05rem;">
+          <span class="rail-label">02 / Topic Area</span>
+          <div class="filter-list" id="domainFilters"></div>
+        </div>
+      </div>
+
+      <div class="hub-links">
+        <span class="rail-label" style="margin-bottom: 0.2rem;">03 / Accounts &amp; Channels</span>
+        <a class="hub-link" href="https://github.com/aniketsrivastava81" target="_blank" rel="noopener noreferrer">
+          <span>GitHub (@aniketsrivastava81)</span>
+          <span>↗</span>
+        </a>
+        <a class="hub-link" href="https://medium.com/@aniketsrivastava81" target="_blank" rel="noopener noreferrer">
+          <span>Medium Write-ups</span>
+          <span>↗</span>
+        </a>
+        <a class="hub-link" href="https://www.youtube.com/watch?v=Xm34KAhARLs&list=PL59Cd0AOncDfqE7M3HeAQjCYnA3Xve0LR" target="_blank" rel="noopener noreferrer">
+          <span>YouTube Demos &amp; Labs</span>
+          <span>↗</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Right Archive Stream -->
+    <main class="main">
+      <div class="topbar">
+        <div class="search-wrap">
+          <input
+            type="search"
+            id="searchInput"
+            class="search-input"
+            placeholder="Search builds, PHP, Beyblade, IIS, Ordinals, SEO..."
+            aria-label="Search entries"
+          />
+          <span class="search-kbd">/</span>
+        </div>
+
+        <div class="controls-group">
+          <button class="ctrl-btn active" id="viewIndexBtn" type="button">Index</button>
+          <button class="ctrl-btn" id="viewGalleryBtn" type="button">Media Grid</button>
+          <button class="ctrl-btn" id="viewTimelineBtn" type="button">Timeline</button>
+          <button class="ctrl-btn" id="expandAllBtn" type="button">Expand All</button>
+        </div>
+      </div>
+
+      <header class="archive-header">
+        <div>
+          <h2 class="archive-title" id="currentHeading">All Entries (2015–2026)</h2>
+        </div>
+        <div class="archive-meta" id="resultCounter">Showing 24 of 24 deduplicated entries</div>
+      </header>
+
+      <div id="indexContainer">
+        <div class="table-head">
+          <span>No.</span>
+          <span>Year</span>
+          <span>Preview</span>
+          <span>Entry &amp; Stack</span>
+          <span>Context</span>
+          <span style="text-align: right;">Open</span>
+        </div>
+        <div class="project-list" id="projectList"></div>
+      </div>
+
+      <div id="galleryContainer" class="gallery-view" style="display: none;"></div>
+      <div id="timelineContainer" class="timeline-view" style="display: none;"></div>
+
+      <footer class="footer">
+        <span>Aniket A. Srivastava · Personal Project Archive &amp; Marketing Work</span>
+        <span>Press <strong>/</strong> to search · Click any row or card for notes &amp; links</span>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Focus Modal -->
+  <div class="modal-backdrop" id="focusModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <div class="modal-top">
+        <span class="eyebrow" id="modalMeta" style="margin-bottom: 0;">01 // 2026</span>
+        <div class="modal-nav">
+          <button class="ctrl-btn" id="prevProjBtn" type="button" title="Previous (Left Arrow)">← Prev</button>
+          <button class="ctrl-btn" id="nextProjBtn" type="button" title="Next (Right Arrow)">Next →</button>
+          <button class="ctrl-btn" id="closeModalBtn" type="button" title="Close (Esc)">Close [Esc]</button>
+        </div>
+      </div>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script>
+    const PROJECTS = [
+      {
+        id: "beyblade-sim-2026",
+        num: "01",
+        year: "2026",
+        title: "Beyblade Battle Simulator & Dashboard",
+        origin: "hobby",
+        originLabel: "Hobby Build",
+        gitStatus: "Pending Git Upload",
+        domain: "Sims, 3D & Data",
+        preview: {
+          url: "https://i.ytimg.com/vi/m6L8MTdignU/hqdefault.jpg",
+          tag: "Video Demo",
+          caption: "YouTube Simulator & Dashboard Demo (m6L8MTdignU)",
+          linkUrl: "https://www.youtube.com/watch?v=m6L8MTdignU"
+        },
+        summary: "Personal hobby project combining a digital Beyblade parts workshop, a 2D HTML5 Canvas arena physics simulator, and local-only match logs.",
+        idea: "Built just for fun to tinker with spinning-top part combinations, simulate arena collisions in the browser, and keep personal match stats locally without needing a backend.",
+        notes: [
+          "Part 1 (Medium): Digital Beyblade workshop for putting together virtual part combos.",
+          "Part 2 (Medium): 2D battle arena built from scratch using HTML5 Canvas and JavaScript.",
+          "Part 3 (Medium): Local-first match logging and training tracker stored directly in the browser.",
+          "Recorded a working walkthrough video on YouTube; code is awaiting cleanup before Git upload."
+        ],
+        tech: ["HTML5 Canvas", "JavaScript", "2D Physics", "Local Browser Storage"],
+        links: [
+          { type: "YouTube", label: "Beyblade Dashboard & Simulator Demo", url: "https://www.youtube.com/watch?v=m6L8MTdignU" },
+          { type: "Medium", label: "Part 1/3: Building a Digital Beyblade Workshop", url: "https://medium.com/@aniketsrivastava81/building-a-digital-beyblade-workshop-beyblade-part-1-of-3-376cbcab2aed" },
+          { type: "Medium", label: "Part 2/3: Building a Beyblade Arena with Canvas & JS", url: "https://medium.com/@aniketsrivastava81/let-it-rip-building-a-beyblade-arena-with-canvas-and-javascript-beyblade-part-2-of-3-ad0f61b24764" },
+          { type: "Medium", label: "Part 3/3: Match Logs, Training & Local Data", url: "https://medium.com/@aniketsrivastava81/beyblade-match-logs-training-and-keeping-your-data-local-beyblade-part-3-of-3-3acf5c7932c2" }
+        ]
+      },
+      {
+        id: "nexusord-2026",
+        num: "02",
+        year: "2026",
+        title: "NexusOrd — BRC-20 & Ordinals Music Licensing / DRM Concept",
+        origin: "hobby",
+        originLabel: "Hobby Concept",
+        gitStatus: "Pending Git Upload",
+        domain: "Blockchain & IoT",
+        preview: null,
+        summary: "Solo exploration into how Bitcoin Ordinals and BRC-20 tokens could be used for music provenance, licensing, and AI/DRM rules.",
+        idea: "Started out of curiosity around Bitcoin Ordinals and BRC-20 mechanics—exploring how music ownership and DRM licensing could live on Bitcoin, paired with plain-English explainers.",
+        notes: [
+          "Explores combining Bitcoin Ordinals inscriptions and BRC-20 tokens for music provenance and DRM ideas.",
+          "Published a 5-article Medium series breaking down BRC-20 and Ordinals at ELI5, ELI10, and ELI15 levels alongside the NexusOrd concept."
+        ],
+        tech: ["Bitcoin Ordinals", "BRC-20", "Music Provenance Concept", "AI / DRM"],
+        links: [
+          { type: "Medium", label: "Inside NexusOrd: Ordinals & Music Provenance Concept", url: "https://medium.com/@aniketsrivastava81/brc-20-and-ordinals-inside-nexusord-a-ordinals-and-music-provenance-concept-52886e928d5e" },
+          { type: "Medium", label: "Series Hub: BRC-20, Ordinals & Music — Start Here", url: "https://medium.com/@aniketsrivastava81/brc-20-ordinals-and-music-series-start-here-38c21338e246" },
+          { type: "Medium", label: "BRC-20 & Ordinals: Explain Like I Am 15", url: "https://medium.com/@aniketsrivastava81/brc-20-and-ordinals-explain-like-i-am-15-85b952d447a1" },
+          { type: "Medium", label: "BRC-20 & Ordinals: Explain Like I Am 10", url: "https://medium.com/@aniketsrivastava81/brc-20-and-ordinals-explain-like-i-am-10-c8946a0bcdfc" },
+          { type: "Medium", label: "BRC-20 & Ordinals: Explain Like I Am 5", url: "https://medium.com/@aniketsrivastava81/brc-20-and-ordinals-explain-like-i-am-5-7b0ae8640246" }
+        ]
+      },
+      {
+        id: "ai-drm-module-2026",
+        num: "03",
+        year: "2026",
+        title: "AI & DRM Enhancement Module (Test Code)",
+        origin: "hobby",
+        originLabel: "Test Code",
+        gitStatus: "Pending Git Upload",
+        domain: "Blockchain & IoT",
+        preview: null,
+        summary: "Scratchpad test code written to experiment with different AI and DRM protection techniques.",
+        idea: "Not a finished app—just standalone test scripts created to try out different ways of handling DRM and AI content protection.",
+        notes: [
+          "Experimental sandbox code used purely to test different techniques in isolation."
+        ],
+        tech: ["Test Scripts", "DRM Experiments", "AI Techniques"],
+        links: []
+      },
+      {
+        id: "ridgeguard-2026",
+        num: "04",
+        year: "2026",
+        title: "RidgeGuard — Biometric Privacy Enhancer",
+        origin: "hobby",
+        originLabel: "Hobby Build",
+        gitStatus: "Pending Git Upload",
+        domain: "Security & SysAdmin",
+        preview: null,
+        summary: "Personal privacy experiment designed to mask biometric traits in media via fingerprint smudging, voice filtering, and iris scrambling.",
+        idea: "Built out of interest in personal digital privacy—testing ways to obscure visible fingerprints in photos, scramble iris patterns, and alter voiceprints before sharing files online.",
+        notes: [
+          "Includes experimental modules for fingerprint smudging, voice filtering, and iris scrambling.",
+          "Built locally for personal exploration; pending upload to Git."
+        ],
+        tech: ["Privacy Tools", "Fingerprint Smudge", "Iris Scrambler", "Voice Filter"],
+        links: []
+      },
+      {
+        id: "crime-scene-3d-2026",
+        num: "05",
+        year: "2026",
+        title: "3D Crime Scene Recreator via Drones & Photogrammetry",
+        origin: "hobby",
+        originLabel: "Hobby Build",
+        gitStatus: "Pending Git Upload",
+        domain: "Sims, 3D & Data",
+        preview: null,
+        summary: "Personal 3D reconstruction experiment turning drone imagery and multi-angle photos into 3D scene models via photogrammetry.",
+        idea: "A solo experiment exploring how drone photography and photogrammetry workflows can reconstruct physical spaces into 3D models.",
+        notes: [
+          "Uses drone captures and photogrammetry processing to generate 3D scene reconstructions."
+        ],
+        tech: ["Drone Photography", "Photogrammetry", "3D Reconstruction"],
+        links: []
+      },
+      {
+        id: "warehouse-2025",
+        num: "06",
+        year: "2025",
+        title: "Warehouse Project",
+        origin: "hobby",
+        originLabel: "Hobby Build",
+        gitStatus: "Pending Git Upload",
+        domain: "Web & Mobile",
+        preview: {
+          url: "https://i.ytimg.com/vi/OF1j9fODkpk/hqdefault.jpg",
+          tag: "Video Demo",
+          caption: "YouTube Warehouse Demo (OF1j9fODkpk)",
+          linkUrl: "https://www.youtube.com/watch?v=OF1j9fODkpk"
+        },
+        summary: "Solo warehouse inventory and stock tracking web project with a recorded YouTube demo.",
+        idea: "Built on my own to practice structuring inventory tracking screens and stock operations.",
+        notes: [
+          "Full walkthrough recorded on YouTube; repository pending upload on Git."
+        ],
+        tech: ["Inventory Tracking", "Web App"],
+        links: [
+          { type: "YouTube", label: "Warehouse Project Video Demo", url: "https://www.youtube.com/watch?v=OF1j9fODkpk" }
+        ]
+      },
+      {
+        id: "camera-anim-2025",
+        num: "07",
+        year: "2025",
+        title: "Camera Animation Project",
+        origin: "hobby",
+        originLabel: "Hobby Build",
+        gitStatus: "Pending Git Upload",
+        domain: "Sims, 3D & Data",
+        preview: null,
+        summary: "Personal graphics experiment focused on scripted camera movement and animation transitions.",
+        idea: "Built for fun to test camera pathing and animated viewpoint controls.",
+        notes: [
+          "Standalone personal project; pending upload on Git."
+        ],
+        tech: ["Camera Animation", "Graphics"],
+        links: []
+      },
+      {
+        id: "emailer-2025",
+        num: "08",
+        year: "2025",
+        title: "Emailer Project",
+        origin: "hobby",
+        originLabel: "Hobby Build",
+        gitStatus: "Pending Git Upload",
+        domain: "Web & Mobile",
+        preview: null,
+        summary: "Lightweight personal email-sending utility built in 2025.",
+        idea: "A small standalone tool built to test automated email sending workflows.",
+        notes: [
+          "Separate from the 2024 EmailMarketing repository; pending upload on Git."
+        ],
+        tech: ["Email Utility", "Automation"],
+        links: []
+      },
+      {
+        id: "instagrid-2025",
+        num: "09",
+        year: "2025",
+        title: "InstaGrid Template",
+        origin: "hobby",
+        originLabel: "Hobby Build",
+        gitStatus: "Pending Git Upload",
+        domain: "Web & Mobile",
+        preview: null,
+        summary: "Simple grid layout template for previewing and arranging Instagram-style 3-column visual feeds.",
+        idea: "Created as a handy visual grid template to plan how posts line up together.",
+        notes: [
+          "Frontend grid template; pending upload on Git."
+        ],
+        tech: ["Grid Layout", "Frontend Template"],
+        links: []
+      },
+      {
+        id: "sprint-task-manager-2024",
+        num: "10",
+        year: "2024–2025",
+        title: "Sprint Task Manager",
+        origin: "hobby",
+        originLabel: "Hobby Build",
+        gitStatus: "Live on GitHub",
+        domain: "Web & Mobile",
+        preview: {
+          url: "https://opengraph.githubassets.com/1/aniketsrivastava81/Sprint-Task-Manager",
+          tag: "GitHub Repo",
+          caption: "aniketsrivastava81/Sprint-Task-Manager",
+          linkUrl: "https://github.com/aniketsrivastava81/Sprint-Task-Manager/"
+        },
+        summary: "Custom PHP task manager built for organizing sprints amongst workmates or peers.",
+        idea: "Made as a straightforward, self-hosted PHP tool so peers or small teams could track sprint tasks without heavy project management overhead.",
+        notes: [
+          "Written in PHP to handle sprint tasks, peer assignments, and progress tracking."
+        ],
+        tech: ["PHP", "Sprint Task Tracking"],
+        links: [
+          { type: "GitHub", label: "Sprint-Task-Manager Repository", url: "https://github.com/aniketsrivastava81/Sprint-Task-Manager/" }
+        ]
+      },
+      {
+        id: "utility-app-test-2024",
+        num: "11",
+        year: "2024",
+        title: "Utility-App-Test (Grid Health & Power Sharing Concept)",
+        origin: "hobby",
+        originLabel: "WIP Prototype",
+        gitStatus: "Code Needs Work",
+        domain: "Blockchain & IoT",
+        preview: {
+          url: "https://opengraph.githubassets.com/1/aniketsrivastava81/Utility-App-Test",
+          tag: "GitHub Repo",
+          caption: "aniketsrivastava81/Utility-App-Test",
+          linkUrl: "https://github.com/aniketsrivastava81/Utility-App-Test"
+        },
+        summary: "Early-stage prototype exploring a power utility grid health dashboard and future blockchain power-sharing provenance.",
+        idea: "Started as a test concept for visualizing power company grid health with the long-term idea of tracking peer-to-peer power sharing on a blockchain.",
+        notes: [
+          "Explicitly marked as an unfinished prototype ('code needs work')."
+        ],
+        tech: ["Blockchain Concept", "Grid Dashboard Prototype"],
+        links: [
+          { type: "GitHub", label: "Utility-App-Test Repository", url: "https://github.com/aniketsrivastava81/Utility-App-Test" }
+        ]
+      },
+      {
+        id: "email-marketing-2024",
+        num: "12",
+        year: "2024",
+        title: "Email Marketing Work & Templates",
+        origin: "work",
+        originLabel: "Marketing Work",
+        gitStatus: "Live on GitHub",
+        domain: "Marketing & SEO",
+        preview: {
+          url: "https://opengraph.githubassets.com/1/aniketsrivastava81/EmailMarketing",
+          tag: "Work Repo",
+          caption: "aniketsrivastava81/EmailMarketing",
+          linkUrl: "https://github.com/aniketsrivastava81/EmailMarketing"
+        },
+        summary: "Real-world email marketing repository documenting campaign structures, outreach sequences, and marketing templates.",
+        idea: "Part of my actual professional marketing work—organizing email campaign assets and conversion-focused messaging.",
+        notes: [
+          "Contains real marketing email work rather than a coding exercise."
+        ],
+        tech: ["Email Marketing", "Campaign Copy", "Subscriber Flows"],
+        links: [
+          { type: "GitHub", label: "EmailMarketing Repository", url: "https://github.com/aniketsrivastava81/EmailMarketing" }
+        ]
+      },
+      {
+        id: "python-pandadocs-2023",
+        num: "13",
+        year: "2023–2024",
+        title: "Python Data Analysis Labs (python_PandaDocs)",
+        origin: "edu",
+        originLabel: "Course / Practice Labs",
+        gitStatus: "Live on GitHub",
+        domain: "Sims, 3D & Data",
+        preview: {
+          url: "https://opengraph.githubassets.com/1/aniketsrivastava81/python_PandaDocs",
+          tag: "GitHub Repo",
+          caption: "aniketsrivastava81/python_PandaDocs",
+          linkUrl: "https://github.com/aniketsrivastava81/python_PandaDocs"
+        },
+        summary: "Practice labs using Python and Pandas for data cleaning, visualization, and analysis reports.",
+        idea: "Completed while building data analysis skills—taking messy datasets, cleaning them with Pandas, and plotting charts to answer questions.",
+        notes: [
+          "Uses Python and Pandas libraries in tandem for data manipulation and visualization.",
+          "Summarized in a Medium portfolio post."
+        ],
+        tech: ["Python", "Pandas", "Data Cleaning", "Visualization"],
+        links: [
+          { type: "GitHub", label: "python_PandaDocs Repository", url: "https://github.com/aniketsrivastava81/python_PandaDocs" },
+          { type: "Medium", label: "Pandas Data Manipulation & Visualization Projects", url: "https://medium.com/@aniketsrivastava81/pandas-data-manipulation-and-visualization-projects-portfolio-project-df0b8b917d79" }
+        ]
+      },
+      {
+        id: "fauna-rescue-2023",
+        num: "14",
+        year: "2023",
+        title: "CAPSTONE: Fauna Blockchain Rescue",
+        origin: "edu",
+        originLabel: "School Capstone",
+        gitStatus: "Live on GitHub",
+        domain: "Blockchain & IoT",
+        preview: {
+          url: "https://opengraph.githubassets.com/1/aniketsrivastava81/faunaRescueBlockchain",
+          tag: "Capstone Repo",
+          caption: "aniketsrivastava81/faunaRescueBlockchain",
+          linkUrl: "https://github.com/aniketsrivastava81/faunaRescueBlockchain/blob/main/readme.md"
+        },
+        summary: "2023 academic capstone combining Blockchain, Single-Board Computers (SBC), and IoT sensors for wildlife conservation in a controlled environment.",
+        idea: "Designed as a capstone project exploring how IoT sensors on SBC hardware could monitor endangered wildlife habitats and log tamper-resistant records on a blockchain.",
+        notes: [
+          "Academic capstone system integrating Blockchain, SBC computing, and IoT sensors."
+        ],
+        tech: ["Blockchain", "SBC Computing", "IoT Sensors", "Wildlife Conservation"],
+        links: [
+          { type: "GitHub", label: "faunaRescueBlockchain README", url: "https://github.com/aniketsrivastava81/faunaRescueBlockchain/blob/main/readme.md" }
+        ]
+      },
+      {
+        id: "terrarium-iot-2023",
+        num: "15",
+        year: "2023",
+        title: "Terrarium IoT Blockchain Project (BCDV_1025)",
+        origin: "edu",
+        originLabel: "School Project",
+        gitStatus: "Live on GitHub",
+        domain: "Blockchain & IoT",
+        preview: {
+          url: "https://opengraph.githubassets.com/1/aniketsrivastava81/BCDV_1025_IoT_Terrarium",
+          tag: "Course Repo",
+          caption: "aniketsrivastava81/BCDV_1025_IoT_Terrarium",
+          linkUrl: "https://github.com/aniketsrivastava81/BCDV_1025_IoT_Terrarium"
+        },
+        summary: "Blockchain course project (BCDV_1025) using Hyperledger Fabric to model purchase transactions, inventory, and IoT device monitoring for terrariums.",
+        idea: "Built for coursework to explore how a permissioned Hyperledger Fabric network can handle purchase records, inventory tracking, and real-time IoT sensor data.",
+        notes: [
+          "Uses Hyperledger Fabric to connect purchase transactions, inventory state, and IoT monitoring concepts."
+        ],
+        tech: ["Hyperledger Fabric", "IoT Monitoring", "Inventory & Purchases"],
+        links: [
+          { type: "GitHub", label: "BCDV_1025_IoT_Terrarium Repository", url: "https://github.com/aniketsrivastava81/BCDV_1025_IoT_Terrarium" }
+        ]
+      },
+      {
+        id: "fintech-rn-2023",
+        num: "16",
+        year: "2023",
+        title: "Fintech App UI Rebuild (Decode & Redo)",
+        origin: "hobby",
+        originLabel: "UI Practice Build",
+        gitStatus: "Live on GitHub",
+        domain: "Web & Mobile",
+        preview: {
+          url: "https://raw.githubusercontent.com/aniketsrivastava81/Fintech-App-React-Native/main/Homescreen.png",
+          tag: "App Screenshot",
+          caption: "Homescreen.png — React Native UI Recreation",
+          linkUrl: "https://github.com/aniketsrivastava81/Fintech-App-React-Native/blob/main/Homescreen.png"
+        },
+        summary: "Self-assigned React Native UI exercise decoding a fintech app screenshot (Homescreen.png) and rebuilding the layout from scratch.",
+        idea: "Practiced mobile UI layout skills by taking a reference fintech homescreen image and recreating its visual structure in React Native.",
+        notes: [
+          "Includes the reference/result Homescreen.png directly inside the GitHub repository."
+        ],
+        tech: ["React Native", "Mobile UI Recreation"],
+        links: [
+          { type: "GitHub", label: "Fintech-App-React-Native Repository", url: "https://github.com/aniketsrivastava81/Fintech-App-React-Native" },
+          { type: "Screenshot", label: "Homescreen.png", url: "https://github.com/aniketsrivastava81/Fintech-App-React-Native/blob/main/Homescreen.png" }
+        ]
+      },
+      {
+        id: "react-admin-2023",
+        num: "17",
+        year: "2023",
+        title: "Custom E-Commerce Dashboard (React)",
+        origin: "hobby",
+        originLabel: "Hobby Build",
+        gitStatus: "Live on GitHub",
+        domain: "Web & Mobile",
+        preview: {
+          url: "https://opengraph.githubassets.com/1/aniketsrivastava81/ReactAdminDashboard",
+          tag: "GitHub Repo",
+          caption: "aniketsrivastava81/ReactAdminDashboard",
+          linkUrl: "https://github.com/aniketsrivastava81/ReactAdminDashboard"
+        },
+        summary: "Personal React frontend build of a custom e-commerce admin dashboard.",
+        idea: "Built on my own to practice structuring React dashboard components, charts, and store management views.",
+        notes: [
+          "Frontend React dashboard exercise."
+        ],
+        tech: ["React", "Admin Dashboard UI"],
+        links: [
+          { type: "GitHub", label: "ReactAdminDashboard Repository", url: "https://github.com/aniketsrivastava81/ReactAdminDashboard" }
+        ]
+      },
+      {
+        id: "ecommerce-laravel-2023",
+        num: "18",
+        year: "2023",
+        title: "Ecommerce Laravel",
+        origin: "hobby",
+        originLabel: "Hobby Build",
+        gitStatus: "Live on GitHub",
+        domain: "Web & Mobile",
+        preview: {
+          url: "https://opengraph.githubassets.com/1/aniketsrivastava81/Ecommerce_laravel",
+          tag: "GitHub Repo",
+          caption: "aniketsrivastava81/Ecommerce_laravel",
+          linkUrl: "https://github.com/aniketsrivastava81/Ecommerce_laravel"
+        },
+        summary: "Personal e-commerce web application built using PHP and the Laravel framework.",
+        idea: "Built to practice full-stack MVC web development, routing, and database models in Laravel.",
+        notes: [
+          "PHP / Laravel e-commerce project."
+        ],
+        tech: ["PHP", "Laravel", "E-Commerce"],
+        links: [
+          { type: "GitHub", label: "Ecommerce_laravel Repository", url: "https://github.com/aniketsrivastava81/Ecommerce_laravel" }
+        ]
+      },
+      {
+        id: "cyt-capstone-2020",
+        num: "19",
+        year: "2020",
+        title: "CAPSTONE: Reducing the Attack Surface & Enhancing Security",
+        origin: "edu",
+        originLabel: "School Capstone",
+        gitStatus: "Live on GitHub",
+        domain: "Security & SysAdmin",
+        preview: {
+          url: "https://opengraph.githubassets.com/1/aniketsrivastava81/cyt-capstone",
+          tag: "Capstone Repo",
+          caption: "aniketsrivastava81/cyt-capstone",
+          linkUrl: "https://github.com/aniketsrivastava81/cyt-capstone"
+        },
+        summary: "2020 cybersecurity capstone adding six defensive features onto an existing website, paired with a Medium walkthrough.",
+        idea: "Created for my 2020 security capstone to practice bolting defensive monitoring and blocking controls onto an existing web app.",
+        notes: [
+          "Added 6 features: Device Fingerprinting, Malware Detection, Fake User / Real User analysis, Report Generation, Keylogging, and IP Blocking.",
+          "Wrote up the approach on Medium in 'From IP Blocking to Malware Detection'."
+        ],
+        tech: ["Device Fingerprinting", "Malware Detection", "Bot vs. Real User Analysis", "IP Blocking", "Keylogging & Reports"],
+        links: [
+          { type: "GitHub", label: "cyt-capstone Repository", url: "https://github.com/aniketsrivastava81/cyt-capstone" },
+          { type: "Medium", label: "From IP Blocking to Malware Detection (Medium)", url: "https://medium.com/@aniketsrivastava81/from-ip-blocking-to-malware-detection-implementing-web-security-for-any-web-app-96b6818a1fbf" }
+        ]
+      },
+      {
+        id: "windows-iis-labs-2020",
+        num: "20",
+        year: "2020",
+        title: "Windows IIS & Server Administration Labs",
+        origin: "edu",
+        originLabel: "Practice Labs",
+        gitStatus: "Live on GitHub",
+        domain: "Security & SysAdmin",
+        preview: {
+          url: "https://i.ytimg.com/vi/qDCCAX-Xm9c/hqdefault.jpg",
+          tag: "Video Playlist",
+          caption: "Windows IIS Labs YouTube Playlist (qDCCAX-Xm9c)",
+          linkUrl: "https://www.youtube.com/watch?v=qDCCAX-Xm9c&list=PL59Cd0AOncDfuPLvIHyFroatNPUnHhyWt"
+        },
+        summary: "Hands-on practice labs covering 13 Windows Server, IIS, and Active Directory administration and hardening operations.",
+        idea: "Completed to practice configuring and locking down Windows Server, IIS, and Active Directory step by step, documented on GitHub and YouTube.",
+        notes: [
+          "Practiced 13 tasks: NTLM network, NTP config, update settings, roles & features (DHCP + backup), PTR + IPv6 disable, Firewall settings, firewall 2 RDP settings, Service config, further hardening, logging & monitoring file setup location, group policies, and backup."
+        ],
+        tech: ["Windows Server", "IIS", "Active Directory", "DHCP / NTLM / NTP", "Firewall & RDP", "Group Policies"],
+        links: [
+          { type: "GitHub", label: "Windows-IIS-Labs Repository", url: "https://github.com/aniketsrivastava81/Windows-IIS-Labs" },
+          { type: "YouTube", label: "Windows IIS LABS Video Playlist", url: "https://www.youtube.com/watch?v=qDCCAX-Xm9c&list=PL59Cd0AOncDfuPLvIHyFroatNPUnHhyWt" }
+        ]
+      },
+      {
+        id: "tekin-os-2019",
+        num: "21",
+        year: "2019–2020",
+        title: "Tekin-OS — Custom Debian Pen-Testing & SysAdmin Build",
+        origin: "hobby",
+        originLabel: "Hobby OS Build",
+        gitStatus: "YouTube Demo",
+        domain: "Security & SysAdmin",
+        preview: {
+          url: "https://i.ytimg.com/vi/Xm34KAhARLs/hqdefault.jpg",
+          tag: "Video Demo",
+          caption: "Tekin-OS Demo & Cyber Security Labs Playlist",
+          linkUrl: "https://www.youtube.com/watch?v=Xm34KAhARLs&list=PL59Cd0AOncDfqE7M3HeAQjCYnA3Xve0LR"
+        },
+        summary: "Personal custom Debian-based OS setup inspired by Parrot OS and Kali Linux for practicing pen-testing, network admin, and system admin.",
+        idea: "Made my own version of a Debian OS to learn Linux customization, terminal workflows, and virtualization inside VirtualBox.",
+        notes: [
+          "Used in VirtualBox labs for penetration testing, network admin, and system admin practice.",
+          "Featured in the Cyber Security Labs and Projects YouTube playlist."
+        ],
+        tech: ["Debian Linux", "VirtualBox", "Linux Terminal", "Pen-Testing & SysAdmin"],
+        links: [
+          { type: "YouTube", label: "Tekin-OS Demo Video", url: "https://www.youtube.com/embed/Xm34KAhARLs?si=dIODq9E2KOAR2BS4" },
+          { type: "YouTube", label: "Cyber Security Labs & Projects Playlist", url: "https://www.youtube.com/watch?v=Xm34KAhARLs&list=PL59Cd0AOncDfqE7M3HeAQjCYnA3Xve0LR" }
+        ]
+      },
+      {
+        id: "marketing-pdf-2016",
+        num: "22",
+        year: "2016–2024",
+        title: "Marketing & Social Media Proof of Work (PDF)",
+        origin: "work",
+        originLabel: "Marketing Work",
+        gitStatus: "Live PDF",
+        domain: "Marketing & SEO",
+        preview: {
+          url: "https://opengraph.githubassets.com/1/aniketsrivastava81/marketing_socialmedia",
+          tag: "Work Portfolio",
+          caption: "Part Marketing and Social Proof of Work.pdf",
+          linkUrl: "https://github.com/aniketsrivastava81/marketing_socialmedia/blob/main/Part%20Marketing%20and%20Social%20Proof%20of%20Work.pdf"
+        },
+        summary: "Compiled PDF proof of work covering real-world digital marketing and social media execution from 2016 to 2024.",
+        idea: "Actual work experience portfolio documenting campaigns, social media growth, and marketing deliverables over eight years.",
+        notes: [
+          "Hosted as 'Part Marketing and Social Proof of Work.pdf' on GitHub."
+        ],
+        tech: ["Digital Marketing", "Social Media Management", "Campaign Execution"],
+        links: [
+          { type: "PDF", label: "Part Marketing and Social Proof of Work.pdf", url: "https://github.com/aniketsrivastava81/marketing_socialmedia/blob/main/Part%20Marketing%20and%20Social%20Proof%20of%20Work.pdf" }
+        ]
+      },
+      {
+        id: "marketing-samples-2016",
+        num: "23",
+        year: "2016–2024",
+        title: "Social Media & Marketing Campaign Samples",
+        origin: "work",
+        originLabel: "Marketing Work",
+        gitStatus: "Live on GitHub",
+        domain: "Marketing & SEO",
+        preview: {
+          url: "https://opengraph.githubassets.com/1/aniketsrivastava81/Social-Media-and-Marketing-Samples-",
+          tag: "Work Samples",
+          caption: "Social-Media-and-Marketing-Samples-",
+          linkUrl: "https://github.com/aniketsrivastava81/Social-Media-and-Marketing-Samples-/blob/main/README.md"
+        },
+        summary: "Archive of real social media and marketing work samples produced between 2016 and 2024.",
+        idea: "Companion repository showcasing concrete campaign samples and social media work from 2016–2024.",
+        notes: [
+          "Part of my real-world marketing work history."
+        ],
+        tech: ["Social Media Marketing", "Content Campaigns"],
+        links: [
+          { type: "GitHub", label: "Social-Media-and-Marketing-Samples- README", url: "https://github.com/aniketsrivastava81/Social-Media-and-Marketing-Samples-/blob/main/README.md" }
+        ]
+      },
+      {
+        id: "seo-2015",
+        num: "24",
+        year: "2015",
+        title: "How I Ranked #1 on Google in 2015 — SEO Case Study",
+        origin: "work",
+        originLabel: "Marketing Work",
+        gitStatus: "Published Article",
+        domain: "Marketing & SEO",
+        preview: null,
+        summary: "Case study documenting real SEO work from 2015 that achieved a #1 organic ranking on Google.",
+        idea: "Documents how I ranked #1 on Google in 2015—the earliest piece of my real-world digital marketing experience.",
+        notes: [
+          "Published as an SEO case study on Medium."
+        ],
+        tech: ["SEO", "Organic Search Ranking"],
+        links: [
+          { type: "Medium", label: "How I Ranked #1 on Google in 2015: An SEO Case Study", url: "https://medium.com/@aniketsrivastava81/how-i-ranked-1-on-google-in-2015-an-seo-case-study-e38ed1f2f77c" }
+        ]
+      }
+    ];
+
+    // State
+    let activeOrigin = "all";
+    let activeDomain = "All";
+    let searchQuery = "";
+    let currentView = "index";
+    let expandedIds = new Set();
+    let modalProjectIndex = -1;
+
+    const origins = [
+      { id: "all", label: "All Entries" },
+      { id: "hobby", label: "Hobby & Solo Builds" },
+      { id: "edu", label: "School Capstones & Labs" },
+      { id: "work", label: "Marketing Work (Real Exp.)" }
+    ];
+
+    const domains = [
+      "All",
+      "Blockchain & IoT",
+      "Security & SysAdmin",
+      "Sims, 3D & Data",
+      "Web & Mobile",
+      "Marketing & SEO"
+    ];
+
+    // DOM Elements
+    const originFiltersEl = document.getElementById("originFilters");
+    const domainFiltersEl = document.getElementById("domainFilters");
+    const projectListEl = document.getElementById("projectList");
+    const galleryContainerEl = document.getElementById("galleryContainer");
+    const timelineContainerEl = document.getElementById("timelineContainer");
+    const indexContainerEl = document.getElementById("indexContainer");
+    const searchInputEl = document.getElementById("searchInput");
+    const resultCounterEl = document.getElementById("resultCounter");
+    const currentHeadingEl = document.getElementById("currentHeading");
+    const expandAllBtn = document.getElementById("expandAllBtn");
+    const viewIndexBtn = document.getElementById("viewIndexBtn");
+    const viewGalleryBtn = document.getElementById("viewGalleryBtn");
+    const viewTimelineBtn = document.getElementById("viewTimelineBtn");
+    const themeToggleBtn = document.getElementById("themeToggle");
+
+    // Modal Elements
+    const focusModal = document.getElementById("focusModal");
+    const modalMeta = document.getElementById("modalMeta");
+    const modalBody = document.getElementById("modalBody");
+    const prevProjBtn = document.getElementById("prevProjBtn");
+    const nextProjBtn = document.getElementById("nextProjBtn");
+    const closeModalBtn = document.getElementById("closeModalBtn");
+
+    // Theme Handling
+    const savedTheme = localStorage.getItem("aas-archive-theme") || "light";
+    document.documentElement.setAttribute("data-theme", savedTheme);
+    themeToggleBtn.textContent = savedTheme === "dark" ? "LIGHT MODE" : "DARK MODE";
+
+    themeToggleBtn.addEventListener("click", () => {
+      const current = document.documentElement.getAttribute("data-theme");
+      const next = current === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", next);
+      localStorage.setItem("aas-archive-theme", next);
+      themeToggleBtn.textContent = next === "dark" ? "LIGHT MODE" : "DARK MODE";
+    });
+
+    // Render Origin Filters
+    function renderOriginFilters() {
+      originFiltersEl.innerHTML = origins.map((o) => {
+        const count = o.id === "all"
+          ? PROJECTS.length
+          : PROJECTS.filter((p) => p.origin === o.id).length;
+        const activeClass = activeOrigin === o.id ? "active" : "";
+        return `
+          <button class="filter-btn ${activeClass}" data-origin="${o.id}" type="button">
+            <span>${o.label}</span>
+            <span class="filter-count">${count}</span>
+          </button>
+        `;
+      }).join("");
+
+      originFiltersEl.querySelectorAll(".filter-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          activeOrigin = btn.getAttribute("data-origin");
+          renderOriginFilters();
+          render();
+        });
+      });
+    }
+
+    // Render Domain Filters
+    function renderDomainFilters() {
+      domainFiltersEl.innerHTML = domains.map((domain) => {
+        const count = domain === "All"
+          ? PROJECTS.length
+          : PROJECTS.filter((p) => p.domain === domain).length;
+        const activeClass = activeDomain === domain ? "active" : "";
+        return `
+          <button class="filter-btn ${activeClass}" data-domain="${domain}" type="button">
+            <span>${domain}</span>
+            <span class="filter-count">${count}</span>
+          </button>
+        `;
+      }).join("");
+
+      domainFiltersEl.querySelectorAll(".filter-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          activeDomain = btn.getAttribute("data-domain");
+          renderDomainFilters();
+          render();
+        });
+      });
+    }
+
+    // Search Input
+    searchInputEl.addEventListener("input", (e) => {
+      searchQuery = e.target.value.trim().toLowerCase();
+      render();
+    });
+
+    // Filter Logic
+    function getFilteredProjects() {
+      return PROJECTS.filter((p) => {
+        const originMatch = activeOrigin === "all" || p.origin === activeOrigin;
+        const domainMatch = activeDomain === "All" || p.domain === activeDomain;
+        if (!originMatch || !domainMatch) return false;
+        if (!searchQuery) return true;
+
+        const haystack = [
+          p.num,
+          p.year,
+          p.title,
+          p.originLabel,
+          p.gitStatus,
+          p.domain,
+          p.summary,
+          p.idea,
+          ...p.notes,
+          ...p.tech,
+          ...p.links.map((l) => l.label)
+        ].join(" ").toLowerCase();
+
+        return haystack.includes(searchQuery);
+      });
+    }
+
+    function originBadgeMarkup(p) {
+      if (p.origin === "work") {
+        return `<span class="badge badge-work">★ ${p.originLabel}</span>`;
+      }
+      if (p.origin === "edu") {
+        return `<span class="badge badge-edu">◈ ${p.originLabel}</span>`;
+      }
+      return `<span class="badge badge-hobby">○ ${p.originLabel}</span>`;
+    }
+
+    function gitBadgeMarkup(p) {
+      if (p.gitStatus.includes("Pending") || p.gitStatus.includes("Needs Work")) {
+        return `<span class="badge badge-pending">${p.gitStatus}</span>`;
+      }
+      return `<span class="badge" style="color:var(--ink-muted);">${p.gitStatus}</span>`;
+    }
+
+    function thumbMarkup(p, isGallery = false) {
+      const boxClass = isGallery ? "gallery-media" : "thumb-box";
+      if (p.preview && p.preview.url) {
+        return `
+          <div class="${boxClass}">
+            <img
+              src="${p.preview.url}"
+              alt="${p.title} preview"
+              loading="lazy"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            />
+            <div class="thumb-fallback" style="display:none;">
+              <span>${p.num} · ${p.year}</span>
+              <span>${p.gitStatus}</span>
+            </div>
+            <span class="thumb-tag">${p.preview.tag}</span>
+          </div>
+        `;
+      }
+      return `
+        <div class="${boxClass}">
+          <div class="thumb-fallback">
+            <span>${p.num} // ${p.year}</span>
+            <span>${p.gitStatus}</span>
+          </div>
+        </div>
+      `;
+    }
+
+    function linksMarkup(links) {
+      if (!links || links.length === 0) {
+        return `<span class="no-links-note">No public URL yet — local files pending upload to GitHub.</span>`;
+      }
+      return `<div class="link-pills">
+        ${links.map((l) => `
+          <a class="ext-link" href="${l.url}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">
+            <span class="ext-type">${l.type}</span>
+            <span>${l.label} ↗</span>
+          </a>
+        `).join("")}
+      </div>`;
+    }
+
+    // Main Render Function
+    function render() {
+      const filtered = getFilteredProjects();
+      const originObj = origins.find((o) => o.id === activeOrigin);
+      const headingParts = [];
+      if (activeOrigin !== "all" && originObj) headingParts.push(originObj.label);
+      if (activeDomain !== "All") headingParts.push(activeDomain);
+      currentHeadingEl.textContent = headingParts.length
+        ? `${headingParts.join(" · ")} (${filtered.length})`
+        : "All Entries (2015–2026)";
+
+      resultCounterEl.textContent = `Showing ${filtered.length} of ${PROJECTS.length} deduplicated entries`;
+
+      if (filtered.length === 0) {
+        const emptyHtml = `<div class="empty-state">No entries match your current filter/search. Clear filters to view all 24 items.</div>`;
+        projectListEl.innerHTML = emptyHtml;
+        galleryContainerEl.innerHTML = emptyHtml;
+        timelineContainerEl.innerHTML = emptyHtml;
+        return;
+      }
+
+      // 1. Index View
+      projectListEl.innerHTML = filtered.map((p) => {
+        const isExpanded = expandedIds.has(p.id);
+        const hasPreview = Boolean(p.preview && p.preview.url);
+        return `
+          <article class="project-item ${isExpanded ? "expanded" : ""}" data-id="${p.id}">
+            <div class="project-row" role="button" tabindex="0" aria-expanded="${isExpanded}">
+              <div class="col-idx">${p.num}</div>
+              <div class="col-year">${p.year}</div>
+              ${thumbMarkup(p, false)}
+              <div class="col-main">
+                <div class="proj-title-line">
+                  <h3 class="proj-title">${p.title}</h3>
+                  <span class="proj-domain-tag">// ${p.domain}</span>
+                </div>
+                <p class="proj-summary">${p.summary}</p>
+                <div class="tech-row">
+                  ${p.tech.map((t) => `<span class="tech-chip">${t}</span>`).join("")}
+                </div>
+              </div>
+              <div class="col-status">
+                ${originBadgeMarkup(p)}
+                ${gitBadgeMarkup(p)}
+              </div>
+              <div class="col-action">
+                <button class="row-btn toggle-btn" type="button">${isExpanded ? "−" : "+"}</button>
+                <button class="row-btn modal-btn" type="button" title="Open focused card">Open</button>
+              </div>
+            </div>
+
+            <div class="project-detail">
+              <div class="detail-layout ${hasPreview ? "" : "no-preview"}">
+                ${hasPreview ? `
+                  <a class="detail-media-card" href="${p.preview.linkUrl}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">
+                    <img src="${p.preview.url}" alt="${p.preview.caption}" loading="lazy" onerror="this.parentElement.style.display='none'" />
+                    <div class="detail-media-caption">
+                      <span>${p.preview.caption}</span>
+                      <span>↗</span>
+                    </div>
+                  </a>
+                ` : ""}
+                <div>
+                  <div class="detail-grid">
+                    <div class="detail-block">
+                      <h4>01 // What It Is &amp; Why I Made It</h4>
+                      <p>${p.idea}</p>
+                    </div>
+                    <div class="detail-block">
+                      <h4>02 // Details &amp; Notes</h4>
+                      <ul>
+                        ${p.notes.map((item) => `<li>${item}</li>`).join("")}
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="detail-links">
+                    <span class="detail-links-title">03 // Links, Videos &amp; Artifacts (${p.links.length})</span>
+                    ${linksMarkup(p.links)}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        `;
+      }).join("");
+
+      projectListEl.querySelectorAll(".project-item").forEach((item) => {
+        const id = item.getAttribute("data-id");
+        const row = item.querySelector(".project-row");
+        const modalBtn = item.querySelector(".modal-btn");
+
+        row.addEventListener("click", (e) => {
+          if (e.target.closest(".modal-btn")) return;
+          if (expandedIds.has(id)) {
+            expandedIds.delete(id);
+          } else {
+            expandedIds.add(id);
+          }
+          render();
+        });
+
+        row.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            row.click();
+          }
+        });
+
+        modalBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          openModalById(id);
+        });
+      });
+
+      // 2. Media Grid View
+      galleryContainerEl.innerHTML = filtered.map((p) => `
+        <article class="gallery-card" data-id="${p.id}">
+          ${thumbMarkup(p, true)}
+          <div class="gallery-body">
+            <div style="display:flex; justify-content:space-between; align-items:center; gap:0.4rem; flex-wrap:wrap;">
+              <span class="col-year">${p.num} · ${p.year}</span>
+              ${originBadgeMarkup(p)}
+            </div>
+            <h3 class="proj-title" style="font-size:0.96rem;">${p.title}</h3>
+            <p class="proj-summary" style="font-size:0.82rem; margin-bottom:0.25rem;">${p.summary}</p>
+            <div class="tech-row" style="margin-top:auto;">
+              ${p.tech.slice(0, 3).map((t) => `<span class="tech-chip">${t}</span>`).join("")}
+            </div>
+          </div>
+        </article>
+      `).join("");
+
+      galleryContainerEl.querySelectorAll(".gallery-card").forEach((card) => {
+        card.addEventListener("click", () => {
+          openModalById(card.getAttribute("data-id"));
+        });
+      });
+
+      // 3. Timeline View
+      const eras = [
+        { label: "2026 — Recent Hobby Builds & Experiments (Pending Git Upload)", match: (y) => y.includes("2026") },
+        { label: "2024–2025 — PHP Sprint Tracker, Grid Prototype, Warehouse Demo & Utilities", match: (y) => y === "2025" || y === "2024–2025" || y === "2024" },
+        { label: "2023–2024 — School Capstones, Course Labs & UI/Web Practice Builds", match: (y) => y.includes("2023") },
+        { label: "2019–2020 — Security Capstone, Custom Debian OS & Windows IIS Labs", match: (y) => y.includes("2020") || y.includes("2019") },
+        { label: "2015–2024 — Real-World Marketing, SEO & Social Media Work Experience", match: (y) => y.includes("2015") || y.includes("2016") }
+      ];
+
+      timelineContainerEl.innerHTML = eras.map((era) => {
+        const groupItems = filtered.filter((p) => era.match(p.year));
+        if (groupItems.length === 0) return "";
+        return `
+          <section class="era-group">
+            <h3 class="era-heading">${era.label}</h3>
+            <div class="era-cards">
+              ${groupItems.map((p) => `
+                <div class="era-card" data-id="${p.id}">
+                  <div style="display:flex; justify-content:space-between; align-items:center; gap:0.4rem; margin-bottom:0.45rem;">
+                    <span class="col-year">${p.num} · ${p.year}</span>
+                    ${originBadgeMarkup(p)}
+                  </div>
+                  <h4 class="proj-title" style="font-size:0.95rem; margin-bottom:0.35rem;">${p.title}</h4>
+                  <p class="proj-summary" style="font-size:0.82rem; margin-bottom:0.6rem;">${p.summary}</p>
+                  <div class="tech-row">
+                    ${p.tech.slice(0, 4).map((t) => `<span class="tech-chip">${t}</span>`).join("")}
+                  </div>
+                </div>
+              `).join("")}
+            </div>
+          </section>
+        `;
+      }).join("");
+
+      timelineContainerEl.querySelectorAll(".era-card").forEach((card) => {
+        card.addEventListener("click", () => {
+          openModalById(card.getAttribute("data-id"));
+        });
+      });
+    }
+
+    // View Toggles
+    function setActiveView(view) {
+      currentView = view;
+      viewIndexBtn.classList.toggle("active", view === "index");
+      viewGalleryBtn.classList.toggle("active", view === "gallery");
+      viewTimelineBtn.classList.toggle("active", view === "timeline");
+
+      indexContainerEl.style.display = view === "index" ? "block" : "none";
+      galleryContainerEl.style.display = view === "gallery" ? "grid" : "none";
+      timelineContainerEl.style.display = view === "timeline" ? "flex" : "none";
+      expandAllBtn.style.display = view === "index" ? "inline-block" : "none";
+    }
+
+    viewIndexBtn.addEventListener("click", () => setActiveView("index"));
+    viewGalleryBtn.addEventListener("click", () => setActiveView("gallery"));
+    viewTimelineBtn.addEventListener("click", () => setActiveView("timeline"));
+
+    // Expand / Collapse All
+    expandAllBtn.addEventListener("click", () => {
+      const filtered = getFilteredProjects();
+      const allExpanded = filtered.every((p) => expandedIds.has(p.id));
+      if (allExpanded) {
+        filtered.forEach((p) => expandedIds.delete(p.id));
+        expandAllBtn.textContent = "Expand All";
+      } else {
+        filtered.forEach((p) => expandedIds.add(p.id));
+        expandAllBtn.textContent = "Collapse All";
+      }
+      render();
+    });
+
+    // Focus Modal Logic
+    function openModalById(id) {
+      const filtered = getFilteredProjects();
+      modalProjectIndex = filtered.findIndex((p) => p.id === id);
+      if (modalProjectIndex === -1) return;
+      renderModalContent(filtered);
+      focusModal.classList.add("open");
+    }
+
+    function renderModalContent(filteredList) {
+      const p = filteredList[modalProjectIndex];
+      if (!p) return;
+      const hasPreview = Boolean(p.preview && p.preview.url);
+      modalMeta.textContent = `ENTRY ${p.num} // ${p.year} // ${p.domain.toUpperCase()}`;
+      modalBody.innerHTML = `
+        <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:0.65rem; margin-bottom:0.7rem;">
+          <h3 id="modalTitle" style="font-size:1.3rem; font-weight:700; letter-spacing:-0.03em;">${p.title}</h3>
+          <div style="display:flex; gap:0.4rem; flex-wrap:wrap;">
+            ${originBadgeMarkup(p)}
+            ${gitBadgeMarkup(p)}
+          </div>
+        </div>
+        <p style="font-size:0.92rem; color:var(--ink-secondary); margin-bottom:1rem;">${p.summary}</p>
+        <div class="tech-row" style="margin-bottom:1.25rem;">
+          ${p.tech.map((t) => `<span class="tech-chip">${t}</span>`).join("")}
+        </div>
+        ${hasPreview ? `
+          <a class="modal-hero-media" style="display:block;" href="${p.preview.linkUrl}" target="_blank" rel="noopener noreferrer">
+            <img src="${p.preview.url}" alt="${p.preview.caption}" onerror="this.parentElement.style.display='none'" />
+            <div class="detail-media-caption">
+              <span>${p.preview.caption}</span>
+              <span>Open Source / Video ↗</span>
+            </div>
+          </a>
+        ` : ""}
+        <div class="detail-grid" style="border-top:1px solid var(--border); padding-top:1.15rem;">
+          <div class="detail-block">
+            <h4>01 // What It Is &amp; Why I Made It</h4>
+            <p>${p.idea}</p>
+          </div>
+          <div class="detail-block">
+            <h4>02 // Details &amp; Notes</h4>
+            <ul>
+              ${p.notes.map((item) => `<li>${item}</li>`).join("")}
+            </ul>
+          </div>
+        </div>
+        <div class="detail-links">
+          <span class="detail-links-title">03 // Links, Videos &amp; Artifacts (${p.links.length})</span>
+          ${linksMarkup(p.links)}
+        </div>
+      `;
+    }
+
+    prevProjBtn.addEventListener("click", () => {
+      const filtered = getFilteredProjects();
+      if (!filtered.length) return;
+      modalProjectIndex = (modalProjectIndex - 1 + filtered.length) % filtered.length;
+      renderModalContent(filtered);
+    });
+
+    nextProjBtn.addEventListener("click", () => {
+      const filtered = getFilteredProjects();
+      if (!filtered.length) return;
+      modalProjectIndex = (modalProjectIndex + 1) % filtered.length;
+      renderModalContent(filtered);
+    });
+
+    closeModalBtn.addEventListener("click", () => focusModal.classList.remove("open"));
+    focusModal.addEventListener("click", (e) => {
+      if (e.target === focusModal) focusModal.classList.remove("open");
+    });
+
+    // Keyboard Shortcuts
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "/" && document.activeElement !== searchInputEl) {
+        e.preventDefault();
+        searchInputEl.focus();
+      } else if (e.key === "Escape" && focusModal.classList.contains("open")) {
+        focusModal.classList.remove("open");
+      } else if (e.key === "ArrowLeft" && focusModal.classList.contains("open")) {
+        prevProjBtn.click();
+      } else if (e.key === "ArrowRight" && focusModal.classList.contains("open")) {
+        nextProjBtn.click();
+      }
+    });
+
+    // Initialize
+    renderOriginFilters();
+    renderDomainFilters();
+    render();
+  </script>
+</body>
+</html>
